@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Serilog;
+using Serilog.Sinks.Graylog;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +21,13 @@ namespace WindowsFormsApp2
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            var loggerConfig = new LoggerConfiguration()
+                .WriteTo.Graylog(new GraylogSinkOptions
+                {
+                    HostnameOrAddress = "192.168.86.55",
+                    Port = 1514
+                }).CreateLogger();
+            loggerConfig.Information("This is information");
         }
     }
 }

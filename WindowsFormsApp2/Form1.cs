@@ -25,7 +25,7 @@ namespace WindowsFormsApp2
                 .WriteTo.Graylog(new GraylogSinkOptions
                 {
                     HostnameOrAddress = "192.168.86.55",
-                    Port = 1514
+                    Port = 12201
                 }).CreateLogger();
             loggerConfig.Information("This is information");
         }

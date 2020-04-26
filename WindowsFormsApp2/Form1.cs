@@ -27,7 +27,7 @@ namespace WindowsFormsApp2
                     HostnameOrAddress = "192.168.86.55",
                     Port = 12201
                 }).CreateLogger();
-            loggerConfig.Information("This is information");
+            loggerConfig.Information("This is new information");
         }
     }
 }
